@@ -1,2 +1,2 @@
 #!/bin/bash
-per|-|ne 'print if $.%2==1'
+sed -n '1~2p'
