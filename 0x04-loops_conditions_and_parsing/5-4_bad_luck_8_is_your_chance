@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# A script to display "Best School" using a while loop
+# with iteration 4 being bad luck and 8 being good luck
+
+iter=0
+while [ $iter -lt 10 ]
+do
+if [[ $iter -eq 3 ]]; then
+	echo "Bad luck"
+elif [[ $iter -eq 7 ]]; then
+	echo "Good luck"
+else
+	echo "Best School"
+fi
+iter=$(( iter+1 ))
+done
