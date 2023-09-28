@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# A script to display "Best School" 10 times
+
+iter=1
+until [ $iter -gt 10 ]
+do
+	echo "Best School"
+	iter=$(( iter+1 ))
+done
