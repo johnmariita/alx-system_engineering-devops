@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# A script to display "Best School" using a while loop
+# says hi if 9
+
+iter=0
+while [ $iter -lt 10 ]
+do
+	echo "Best School"
+	iter=$(( iter+1 ))
+if [[ $iter -eq 9 ]]; then
+	echo "Hi"
+fi
+done
