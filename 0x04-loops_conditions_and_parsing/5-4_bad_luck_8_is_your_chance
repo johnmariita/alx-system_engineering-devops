@@ -6,9 +6,9 @@ iter=0
 while [ $iter -lt 10 ]
 do
 if [[ $iter -eq 3 ]]; then
-	echo "Bad luck"
+	echo "bad luck"
 elif [[ $iter -eq 7 ]]; then
-	echo "Good luck"
+	echo "good luck"
 else
 	echo "Best School"
 fi
