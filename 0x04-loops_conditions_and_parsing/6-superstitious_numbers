@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# A script to display "Best School using a while loop"
+
+iter=1
+while [ $iter -lt 21 ]
+do
+	echo "$iter"
+if [[ $iter -eq 4 ]]; then
+	echo "bad luck from China"
+elif [[ $iter -eq 9 ]]; then
+	echo "bad lack from Japan"
+elif [[ $iter -eq 17 ]]; then
+	echo "bad lack from Italy"
+fi
+iter=$(( iter+1 ))
+done
