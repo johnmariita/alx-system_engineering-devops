@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# A script to display numbers as in a clock
+
+Hour=0
+Min=0
+
+while [ $Hour -lt 13 ]
+do
+	echo "Hour: $Hour"
+	Min=1
+	while [ $Min -lt 60 ]
+	do
+		echo "$Min"
+	Min=$(( Min+1 ))
+	done
+	Hour=$(( Hour+1 ))
+done
