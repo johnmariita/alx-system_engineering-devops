@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# A script to display "Best School using a while loop"
+
+iter=0
+while [ $iter -lt 10 ]
+do
+	echo "Best School"
+	iter=$(( iter+1 ))
+done
