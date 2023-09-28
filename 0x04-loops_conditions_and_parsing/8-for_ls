@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# A script to display my files
+
+for file in [0-9]*-*;
+do
+	file_name=${file#[0-9]*-}
+	echo "$file_name"
+done
