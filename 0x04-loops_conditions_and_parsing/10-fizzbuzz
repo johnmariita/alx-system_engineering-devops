@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Fizzbuzz script
+
+iter=1
+while [ $iter -lt 101 ]
+do
+	if [ $((iter%5)) -eq 0 ] && [ $((iter%3)) -ne 0 ]; then
+		echo "Buzz"
+	elif [ $((iter%3)) -eq 0 ] && [ $((iter%5)) -ne 0 ]; then
+		echo "Fizz"
+	elif [ $((iter%5)) -eq 0 ] && [ $((iter%3)) -eq 0 ]; then
+		echo "FizzBuzz"
+	else
+		echo "$iter"
+	fi
+	iter=$(( iter+1 ))
+done
