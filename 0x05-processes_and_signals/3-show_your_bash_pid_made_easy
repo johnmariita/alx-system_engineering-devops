@@ -4,5 +4,5 @@
 pid=$(pgrep -f bash)
 for p in $pid;
 do
-	echo "$p $(cat /proc/$p/comm | tr '\0' ' ')"
+	echo "$p $(cat /proc/"$p"/comm | tr '\0' ' ')"
 done
