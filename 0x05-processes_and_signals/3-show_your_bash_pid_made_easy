@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Script to display the pid of the bash process
+
+pid=$(pgrep -f bash)
+for p in $pid;
+do
+	echo "$p $(cat /proc/$p/comm | tr '\0' ' ')"
+done
