@@ -3,7 +3,7 @@
 
 for file in *;
 do
-	if [ ! -d "$file" ]; then
+	if [[ ! "$file" == .* ]]; then
 		file_name=${file#[0-9]*-}
 		echo "$file_name"
 	fi
