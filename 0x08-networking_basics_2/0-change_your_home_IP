@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Script that changes my ubuntu server
+
+cp /etc/hosts ~hosts.new
+echo ""
+hosts.new
+echo ""
+hosts.new
+cp -f ~/hosts.new /etc/hosts
