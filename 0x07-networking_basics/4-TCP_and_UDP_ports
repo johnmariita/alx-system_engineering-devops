@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# Script that listens to sockets with the PID and prigra's name
-
-netstat -lp
