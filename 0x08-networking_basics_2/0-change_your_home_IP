@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 cp /etc/hosts ~/hosts.new
 sudo sed -i 's/127\.0\.0\.2\s\+localhost/127.0.0.1 localhost/' ~/hosts.new
