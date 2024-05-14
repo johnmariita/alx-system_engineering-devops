@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+new_string="line number 1\nline number 2\nline number 3"
+sed -i "s/string_to_replace/$new_string/" file1
