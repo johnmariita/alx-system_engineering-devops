@@ -4,6 +4,6 @@
 sudo apt-get install -y nginx
 sudo touch /usr/share/nginx/html/4-not_found_page_404.html
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/4-not_found_page_404.html
-new_string="\tserver_name _;\n\n\terror_page 404 \/usr\/share\/nginx\/html\/4-not_found_page_404.html;\n\tlocation = \/4-not_found_page_404.html {\n\t\troot \/usr\/share\/nginx\/html;\n\t\tinternal;\n\t}"
+new_string="server_name _;\n\n\terror_page 404 \/usr\/share\/nginx\/html\/4-not_found_page_404.html;\n\tlocation = \/4-not_found_page_404.html {\n\t\troot \/usr\/share\/nginx\/html;\n\t\tinternal;\n\t}"
 sudo sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-enabled/default
 sudo service nginx restart
