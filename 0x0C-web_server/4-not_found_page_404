@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 #Script to configure a server to display a custom page on error 404
 
 sudo apt-get install -y nginx
