@@ -14,7 +14,7 @@ sudo sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-enabled/default
 
 hostname="[0-9]+-web-[0-9]+"
 ip_address=$(grep -E "$hostname" /etc/hosts | awk '{print $2}')
-new_string="server_name _;\n\n\tadd_header X-Served-by \"$ip_address\";"
+new_string="server_name _;\n\n\tadd_header X-Served-By \"$ip_address\";"
 sudo sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-enabled/default
 
 sudo service nginx restart
