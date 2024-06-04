@@ -35,4 +35,4 @@ if __name__ == "__main__":
 
     print(f"Employee {users_json['name']} is done with tasks({ct}/{tasks}):")
     for e in empN:
-        print(f"     {e['title']}")
+        print(f"\t {e['title']}")
