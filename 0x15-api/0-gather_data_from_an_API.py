@@ -33,6 +33,7 @@ if __name__ == "__main__":
                 completed += 1
                 empN.append(emp)
 
-    print(f"Employee {users_json['name']} is done with tasks({completed}/{tasks}):")
+    print(f"Employee {users_json['name']} is done \
+            with tasks({completed}/{tasks}):")
     for e in empN:
         print(f"     {e['title']}")
