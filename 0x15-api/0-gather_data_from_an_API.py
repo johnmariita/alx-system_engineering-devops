@@ -4,9 +4,9 @@ Using jsonplaceholder to return the TODO list
 progress of an employee
 """
 
+import json
 import sys
 from urllib.request import urlopen
-import json
 
 
 if __name__ == "__main__":
