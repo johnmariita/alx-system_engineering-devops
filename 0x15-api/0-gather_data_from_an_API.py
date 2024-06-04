@@ -23,16 +23,16 @@ if __name__ == "__main__":
     emps = json.loads(body)
     users_json = json.loads(users)
     empN = []
-    cmplt = 0
+    ct = 0
     tasks = 0
 
     for emp in emps:
         if emp['userId'] == int(sys.argv[1]):
             tasks += 1
             if emp['completed'] is True:
-                cmplt += 1
+                ct += 1
                 empN.append(emp)
 
-    print(f"Employee {users_json['name']} is done with tasks({cmplt}/{tasks}):")
+    print(f"Employee {users_json['name']} is done with tasks({ct}/{tasks}):")
     for e in empN:
         print(f"     {e['title']}")
