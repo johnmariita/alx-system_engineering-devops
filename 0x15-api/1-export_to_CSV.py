@@ -31,6 +31,6 @@ if __name__ == "__main__":
 
         for line in emps:
             if line['userId'] == int(sys.argv[1]):
-                row = [sys.argv[1], users_json['name'],
+                row = [sys.argv[1], users_json['username'],
                        line['completed'], line['title']]
                 csv_writer.writerow(row)
