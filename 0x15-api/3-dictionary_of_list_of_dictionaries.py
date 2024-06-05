@@ -30,7 +30,6 @@ if __name__ == "__main__":
             tasks_dict = {}
             userN = i
             this_user_url = user_url + str(userN)
-            print(str(userN), userN, this_user_url, user_url)
 
             with urlopen(this_user_url) as res:
                 user_body = json.loads(res.read())
