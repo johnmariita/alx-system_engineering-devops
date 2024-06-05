@@ -39,7 +39,7 @@ if __name__ == "__main__":
                     tasks_dict['username'] = user_body['username']
                     tasks_dict['task'] = emp['title']
                     tasks_dict['completed'] = emp['completed']
-                tasks.append(tasks_dict)
+                    tasks.append(tasks_dict)
 
             total_todos[str(userN)] = tasks
 
