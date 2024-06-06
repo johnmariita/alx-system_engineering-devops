@@ -4,43 +4,30 @@ Script that creates a json file of a user's
 TODO progress
 """
 
-import csv
 import json
-from urllib.request import urlopen
+import requests
 
 
 if __name__ == "__main__":
-    todo_url = 'https://jsonplaceholder.typicode.com/todos/'
-    user_url = 'https://jsonplaceholder.typicode.com/users/'
+    url = "https://jsonplaceholder.typicode.com/users"
 
-    with urlopen(todo_url) as response:
-        body = response.read()
+    response = requests.get(url)
+    users = response.json()
 
-    todos = json.loads(body)
-
-    with urlopen(user_url) as response:
-        total_users = response.read()
-
-    total_users_json = json.loads(total_users)
-
-    total_todos = {}
+    dictionary = {}
+    for user in users:
+        user_id = user.get('id')
+        username = user.get('username')
+        url = 'https://jsonplaceholder.typicode.com/users/{}'.format(user_id)
+        url = url + '/todos/'
+        response = requests.get(url)
+        tasks = response.json()
+        dictionary[user_id] = []
+        for task in tasks:
+            dictionary[user_id].append({
+                "task": task.get('title'),
+                "completed": task.get('completed'),
+                "username": username
+            })
     with open('todo_all_employees.json', 'w') as file:
-        for i in range(1, len(total_users_json) + 1):
-            tasks = []
-            tasks_dict = {}
-            userN = i
-            this_user_url = user_url + str(userN)
-
-            with urlopen(this_user_url) as res:
-                user_body = json.loads(res.read())
-
-            for emp in todos:
-                if emp['userId'] == userN:
-                    tasks_dict['username'] = user_body['username']
-                    tasks_dict['task'] = emp['title']
-                    tasks_dict['completed'] = emp['completed']
-                    tasks.append(tasks_dict)
-
-            total_todos[str(userN)] = tasks
-
-        json.dump(total_todos, file)
+        json.dump(dictionary, file)
