@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+hostname="[0-9]+-web-01"
+ip_address=$(grep -E "$hostname" /etc/hosts | awk '{print $2}')
+echo "$ip_address"

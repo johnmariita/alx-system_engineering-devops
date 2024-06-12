@@ -1,1 +1,0 @@
-Repo on mysql projects
