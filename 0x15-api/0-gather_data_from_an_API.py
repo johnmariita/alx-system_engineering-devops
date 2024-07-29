@@ -17,7 +17,7 @@ if __name__ == "__main__":
     with urllib.request.urlopen(user_url) as resp:
         details = resp.read().decode('utf-8')
         details = json.loads(details)
-        name = details['name']
+        name = details.get('name')
 
     with urllib.request.urlopen(todo_url) as resp:
         details = resp.read().decode()
@@ -25,10 +25,10 @@ if __name__ == "__main__":
         tasks = []
         done = 0
         for task in details:
-            if task['completed']:
+            if task.get('completed'):
                 done += 1
-                tasks.append(task['title'])
+                tasks.append(task.get('title'))
 
-        print(f"Employee name {name} is done with tasks({done}/{len(details)}):")
+        print(f"Employee {name} is done with tasks({done}/{len(details)}):")
         for t in tasks:
             print(f"\t {t}")
